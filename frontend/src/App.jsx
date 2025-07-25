@@ -1,24 +1,27 @@
 import { useState } from 'react'
 import axios from 'axios';
+import { Login } from './pages/login';
+import{BrowserRouter, Routes,Route} from 'react-router-dom';
+import { Register } from './pages/register';
+import { Dashboard } from './pages/dashboard';
 
 
 function App() {
-
-  const[name,SetName]=useState("")
-const Handle=()=>{
-axios.post("http://localhost:5000/",{name})
-.then((res)=>{
-console.log(res.data)
-})
-}
+ 
 
   return (
     <>
-     <h1>hello</h1>
-     <input type="name" placeholder="name" onChange={(e)=>SetName(e.target.value)}></input>
-     <button onClick={Handle}>submit</button>
+    <BrowserRouter>
+    <Routes>
+
+      <Route path='/' element={<Dashboard/>}></Route>
+      <Route path='/register' element={<Register/>}></Route>
+      <Route path='/login' element={<Login/>}></Route>
+    </Routes>
      
+      </BrowserRouter>
     </>
+   
   )
 }
 

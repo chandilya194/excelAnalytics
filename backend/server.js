@@ -1,7 +1,7 @@
 const express= require('express');
 const app = express();
 const mongoose= require("mongoose");
-const user = require("./models/users");
+const routes = require("./routes/userroutes");
 const cors= require("cors");
 
 require('dotenv').config();
@@ -15,6 +15,7 @@ app.use(cors())
 
 app.use(express.json()) 
 
+app.use('/auth',routes)
 
 app.listen(process.env.PORT,()=>{
   console.log("Server listening to port ",process.env.PORT);
