@@ -1,9 +1,13 @@
 import styles from "./InputDesign.module.css";
-
+import { useNavigate } from "react-router-dom";
 function UploadSection() {
+  const navigate = useNavigate();
+  const toupload=()=>{
+    navigate('/check')
+  }
   return (
     <section className={styles.uploadfileCard}>
-      <button className={styles.uploadfileButton}>
+      <button onClick={toupload} className={styles.uploadfileButton}>
         <div>
           <div
             dangerouslySetInnerHTML={{

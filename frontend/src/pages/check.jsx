@@ -73,8 +73,10 @@ Settoggle(item)
     <div className="uploadcont">
 
      {uploadcond===0?<>
+     <div id="buttonhold">
     <label className="bg-[var(--myblue)] uploadlabel" htmlFor="fileup">Upload file</label>
       <input  id="fileup" type="file" accept=".xlsx,.xls" onChange={handleUpload} />
+      </div>
 </>:<>
 <div className="currentfile" style={{marginTop:"50px",borderRadius:"10px"}}>
   <h3 style={{fontWeight:500}}> {filename}</h3><label className="uploadfileinside" htmlFor="fileup">Upload different file</label>
@@ -86,7 +88,7 @@ Settoggle(item)
       <div id="tablecont">
       <Table data={ExcelData}/>
       </div>
-      </div>
+      </div> 
 
       <div id="visualize">
         <h1>Visualization</h1>
