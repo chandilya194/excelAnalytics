@@ -19,7 +19,7 @@ export function Login() {
       console.log(res.data.message); 
       // Save token to localStorage if needed:
        localStorage.setItem("token", res.data.token);
-       navigate("/");
+       navigate("/check");
     } catch (err) {
       setMessage(err.response?.data?.error || "Login failed.");
     }
@@ -31,7 +31,7 @@ export function Login() {
         <h2>Login</h2>
 
         <input
-          type="email"
+          
           name="email"
           placeholder="Email"
           value={form.email}

@@ -41,7 +41,7 @@ export function Register() {
         />
 
         <input
-          type="email"
+         
           name="email"
           placeholder="Email"
           value={form.email}

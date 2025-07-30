@@ -1,4 +1,121 @@
+:root{
+  --myblue:red;
+}
+body{
+  font-family: poppins;
+}
+input[type="file"]{
+  display: none;
+}
+#setaxis{
+  display: flex;
+  width: 80%;
+  gap:5px
+}
+select,.visbutton{
+  flex: 1;
+  padding:7px 10px;
+  border-radius: 20px;
+}
+select{
+  appearance: none;
+  font-family: poppins;
+  padding-left: 20px;
+}
+#typebut{
+  padding:6px 12px;
+  border-radius: 16px;
+  font-family: poppins;
+  font-size: 12px;
+  font-weight: 500;
+  border-width: 1px;
+}
 
+.visbutton,.downbut,.uploadlabel{
+  background-color: #1f5099;
+  border: none;
+  font-family: poppins;
+  color:white;
+  font-weight: 500;
+  font-size: 15px;
+}
+.uploadlabel{
+ width: fit-content;
+ margin-left: 300px;
+ margin-top: 200px;
+ margin-bottom: 300px;
+ font-size: 35px;
+ padding:20px 50px;
+ border-radius: 60px;
+}
+.uploadlabel:active{
+  background-color: black;
+}
+.uploadfileinside{
+  background-color:#1f5099;
+  padding:7px 10px;
+  border-radius:7px;
+  color:white;
+  font-weight:400;
+}
+.currentfile{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+  padding:0px 30px;
+}
+.downbut{
+    padding:7px 15px;
+  border-radius: 20px;
+font-weight:400;
+}
+.buttons{
+  display: flex;
+  gap: 7px;
+}
+.plotwithbut{
+  display:flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.uploadcont{
+  display: flex;
+  flex-direction: column;
+  gap:60px;
+  padding-left: 300px;
+  background-color: #dddbfa;
+
+}
+#visualize{
+  display:flex;
+  flex-direction: column;
+  gap: 60px;
+}
+#plot{
+  margin-bottom: 500px;
+}
+.tablerow{
+  border: #1976d2;
+  border-bottom: 1px;
+}
+#chart{
+  display: flex;
+  gap:20px;
+  flex-direction: column;
+  
+}
+#charttype{
+  display: flex;
+ margin:auto;
+  gap:3px;
+}
+#filedet{
+  display:flex;
+  flex-direction:column;
+  gap:0px;
+}
 .register-container {
   display: flex;
   justify-content: center;
