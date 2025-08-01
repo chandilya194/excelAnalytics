@@ -19,7 +19,7 @@ export function Login() {
       console.log(res.data.message); 
       // Save token to localStorage if needed:
        localStorage.setItem("token", res.data.token);
-       navigate("/dashboard");
+       navigate("/");
     } catch (err) {
       setMessage(err.response?.data?.error || "Login failed.");
     }

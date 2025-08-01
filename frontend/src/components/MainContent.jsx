@@ -2,26 +2,46 @@ import styles from "./InputDesign.module.css";
 import StatsCard from "./StatsCard";
 import UploadSection from "./UploadSection";
 import FileHistory from "./FileHistory";
+import axios from "axios";
+import { useEffect, useState } from "react";
  
 function MainContent() {
-  return (
+ const token= localStorage.getItem("token")
+ const [name,Setname]= useState("")
+ const [count,Setcount]= useState()
+ const [files,Setfiles]= useState([])
+ const [delcheck,Setdelcheck]= useState(0)
+useEffect(()=>{
+
+   axios.get("http://localhost:5000/upload",{headers:{Authorization:`Bearer ${token}`}})
+ .then((res)=>{
+  // console.log(res.data.name)
+  //  console.log(res.data.upload)
+  Setcount(res.data.upload.length)
+  Setname(res.data.name)
+  Setfiles(res.data.upload) 
+ })
+ },[])  
+    
+ 
+    return (
     <main className={styles.main}>
       <div className={styles.head}>
        
-          <span className={styles.hai}>Hai,<span className={styles.chandilya}>Chandilya</span></span>
+          <span className={styles.hai}>Hai,<span className={styles.chandilya}>{name}</span></span>
           <span style={{opacity:"50%",fontSize:"20px"}}>Upload your excel files and visualize your data</span>
        
         
       </div>
 
       <div className={styles.cards}>
-        <StatsCard count="0" label="Uploads" type="upload" />
-        <StatsCard count="0" label="Downloads" type="download" />
+        <StatsCard count={count} label="Uploads" type="upload" />
+        <StatsCard count="3" label="Chart Types" type="download" />
       </div>
 
       <UploadSection />
 
-      <FileHistory />
+      <FileHistory filenames={files}/>
     </main>
   );
 }

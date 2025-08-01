@@ -1,8 +1,14 @@
 import styles from "./InputDesign.module.css";
+import { useNavigate } from "react-router-dom";
 
-function MenuItem({ icon, text, onClick, className }) {
+function MenuItem({ itemno,icon, text, onClick, className }) {
+  const navigate = useNavigate();
+  const page=["/","/check","/charttypes","/admin"]
+  const gotoo=()=>{
+    navigate(page[itemno])
+  }
   return (
-    <div className={className} onClick={onClick}>
+    <div className={className} onClick={gotoo}>
       <div>
         <div dangerouslySetInnerHTML={{ __html: icon }} />
       </div>

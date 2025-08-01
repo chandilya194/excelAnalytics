@@ -12,6 +12,10 @@ function App() {
 
   return (
     <>
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
+      />
     <BrowserRouter>
     <Routes>
 

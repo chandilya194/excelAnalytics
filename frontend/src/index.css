@@ -2,9 +2,11 @@
 :root{
   --myblue:red;
 }
-body{
+body {
+  margin: 0px;
   font-family: poppins;
 }
+
 input[type="file"]{ 
   display: none;
 }
@@ -44,9 +46,11 @@ select{
   /* background-color: red; */
   padding: 70px;
   width: fit-content;
-   margin-left: 350px;
- margin-top: 200px;
- margin-bottom: 300px;
+ /* margin-top: 200px;
+ margin-bottom: 300px; */
+ margin: auto;
+    margin-left: 350px;
+
  border-width: 2px;
  border-style: dashed;
  border-color: black;
@@ -94,16 +98,22 @@ font-weight:400;
 }
 .uploadcont{
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   gap:60px;
   padding-left: 300px;
   background-color: #dddbfa;
 
+
 }
 #visualize{
   display:flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 15px;
+}
+.datatablehead,.vishead{
+  font-size: 40px;
+  font-weight: 600;
 }
 #plot{
   margin-bottom: 500px;

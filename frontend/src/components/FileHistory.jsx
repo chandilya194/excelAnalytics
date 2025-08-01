@@ -1,24 +1,22 @@
 import styles from "./InputDesign.module.css";
 import FileItem from "./FileItem";
 
-function FileHistory() {
-  const files = [
-    { fileName: "File_name", date: "25/7/25" },
-    { fileName: "File_name", date: "25/7/25" },
-    { fileName: "File_name", date: "25/7/25" }
-  ];
- 
+function FileHistory({filenames}) {
+  
+//  console.log({filenames})
   return (
     <section className={styles.uploadHistory}>
       <h2 className={styles.uploadhistory}>
         Upload history
       </h2>
       <div className={styles.historyFiles}>
-        {files.map((file, index) => (
+        {filenames.map((file, index) => (
           <FileItem
             key={index}
+            id={file._id}
+            
             fileName={file.fileName}
-            date={file.date}
+            date={file.uploadedAt.match(/\d{4}-\d{2}-\d{2}/)}
           />
         ))}
       </div>

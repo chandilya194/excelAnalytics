@@ -1,6 +1,7 @@
 const uploadSchema= require("../models/filemodel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const User= require("../models/users");
 
 
 const xlsx = require("xlsx")
@@ -37,5 +38,14 @@ exports.getfile=async(req, res) => {
     res.status(500).json({ error: "Failed to process Excel file" });
   }
 };
+exports.getdetails=async(req,res)=>{
+   const userdata = await User.findById(req.user.id)
+   const uploads = await uploadSchema.find({userId:req.user.id})
+    res.status(200).json({name :userdata.username,upload:uploads});
+}
+exports.delfile=async(req,res)=>{
+   await uploadSchema.findByIdAndDelete(req.params.id)
+   res.json({mess:"success"})
+}
 
   

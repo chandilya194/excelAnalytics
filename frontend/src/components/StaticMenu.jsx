@@ -36,6 +36,7 @@ function StaticMenu() {
           {menuItems.map((item, index) => (
             <MenuItem
               key={index}
+              itemno={index}
               icon={item.icon}
               text={item.text}
               className={item.className}
